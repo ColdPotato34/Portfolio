@@ -6,22 +6,25 @@ const navLi = document.querySelectorAll(".sidebar nav ul li");
 window.onscroll = () => {
     let current = "";
 
-    // Lógica para detectar seção visível
     sections.forEach((section) => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
         
-        // Compensação para ativar a seção um pouco antes do topo (1/3 da altura)
-        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        // Verifica se a posição do scroll é maior ou igual ao topo da seção menos um offset
+        if (window.scrollY >= sectionTop - 150) {
             current = section.getAttribute("id");
         }
     });
 
-    // update sidebar
+    // Verifica se chegou ao final da página
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 10) {
+        current = "contato";
+    }
+
+    // Update sidebar
     navLi.forEach((li) => {
         li.classList.remove("active");
         
-        // cerificar link e secao atual
+        // Verifica se o link contém o ID da seção atual
         if (li.querySelector('a').getAttribute("href").includes(current)) {
             li.classList.add("active");
         }
