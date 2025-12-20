@@ -7,10 +7,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,11 +21,11 @@
 
         <nav class="main-nav">
             <ul>
-                <li class="active"><a href="#home"><i class="fa-solid fa-house"></i> Home</a></li>
-                <li><a href="#sobre"><i class="fa-solid fa-user"></i> Sobre</a></li>
-                <li><a href="#portfolio"><i class="fa-solid fa-file-code"></i> Portfólio</a></li>
-                <li><a href="#skills"><i class="fa-solid fa-list-check"></i> Skills</a></li>
-                <li><a href="#contato"><i class="fa-solid fa-envelope"></i> Contato</a></li>
+                <li class="active"><a href="#home" class="hacker-link"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="#sobre" class="hacker-link"><i class="fa-solid fa-user"></i> Sobre</a></li>
+                <li><a href="#portfolio" class="hacker-link"><i class="fa-solid fa-file-code"></i> Portfólio</a></li>
+                <li><a href="#skills" class="hacker-link"><i class="fa-solid fa-list-check"></i> Skills</a></li>
+                <li><a href="#contato" class="hacker-link"><i class="fa-solid fa-envelope"></i> Contato</a></li>
             </ul>
         </nav>
     </aside>
@@ -39,12 +38,12 @@
                     <img src="imagens/Foto-profile.png" alt="Foto de Caio José" class="profile-image">
                 </div>
                 <div class="home-text">
-                    <h1>Olá, eu sou <span class="highlight">Caio José</span>,</h1>
+                    <h1 class="typing-effect" data-text="Olá, eu sou Caio José,"></h1>
+                    
                     <h2>Desenvolvedor Web & Designer UI/UX</h2>
                     <p>Estudante de Ciência da Computação e Aspirante do Alpha EdTech. Transformo ideias e protótipos em interfaces reais, responsivas e funcionais para a web.</p>
                     <div class="home-buttons">
-                        <a href="../CV/cv_0542487660193746.rtf" download class="btn btn-primary">Baixar CV</a>
-                        
+                        <a href="CV/cv_0542487660193746.rtf" download class="btn btn-primary">Baixar CV</a>
                         <a href="#contato" class="btn btn-secondary">Contate-me</a>
                     </div>
                 </div>
@@ -52,7 +51,7 @@
         </section>
 
         <section id="sobre" class="section-container">
-            <h2 class="section-title">Sobre Mim</h2>
+            <h2 class="section-title hacker-title" data-value="Sobre Mim">Sobre Mim</h2>
             
             <div class="sobre-content">
                 <div class="stats-grid">
@@ -79,7 +78,7 @@
                 </div>
             </div>
 
-            <h3 class="subsection-title">Serviços</h3>
+            <h3 class="subsection-title hacker-title" data-value="Serviços">Serviços</h3>
             <div class="services-grid">
                 <div class="service-card">
                     <i class="fa-solid fa-pen-ruler service-icon"></i>
@@ -101,9 +100,8 @@
         </section>
 
         <section id="portfolio" class="section-container">
-             <h2 class="section-title">Portfólio</h2>
+             <h2 class="section-title hacker-title" data-value="Portfólio">Portfólio</h2>
              <div class="portfolio-grid">
-                
                  <a href="https://coldpotato34.github.io/Projeto-css-1/html/index.html" target="_blank" class="portfolio-link">
                      <div class="project-card">
                          <div class="project-image" style="background-image: url('imagens/Card2.png');"></div>
@@ -113,7 +111,6 @@
                          </div>
                      </div>
                  </a>
-
                  <a href="https://coldpotato34.github.io/Projeto-css-2/html/index.html" target="_blank" class="portfolio-link">
                     <div class="project-card">
                         <div class="project-image" style="background-image: url('imagens/Card3.png');"></div>
@@ -123,7 +120,6 @@
                         </div>
                     </div>
                 </a>
-
                 <a href="https://coldpotato34.github.io/Projeto-js-1/html/index.html" target="_blank" class="portfolio-link">
                     <div class="project-card">
                         <div class="project-image" style="background-image: url('imagens/Card1.png');"></div>
@@ -133,12 +129,11 @@
                         </div>
                     </div>
                 </a>
-
              </div>
         </section>
 
         <section id="skills" class="section-container">
-            <h2 class="section-title">Skills</h2>
+            <h2 class="section-title hacker-title" data-value="Skills">Skills</h2>
 
             <h3 class="subsection-title">Soft Skills</h3>
             <div class="skills-grid soft-skills">
@@ -178,7 +173,7 @@
         </section>
 
         <section id="contato" class="section-container">
-            <h2 class="section-title">Contato</h2>
+            <h2 class="section-title hacker-title" data-value="Contato">Contato</h2>
             <p class="contato-subtitle">Entre em contato comigo agora!<br>pelas minhas redes sociais</p>
 
             <div class="social-links">
