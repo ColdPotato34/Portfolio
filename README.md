@@ -1,47 +1,62 @@
-# Portfólio Pessoal
+# Portfólio Pessoal - Caio José
 
-Este repositório contém o código-fonte do meu site de portfólio pessoal. O projeto foi desenvolvido como parte das atividades práticas do curso Alpha EdTech, com o objetivo de demonstrar habilidades em desenvolvimento Front-end e Design UI/UX.
+Este repositório contém o código-fonte do meu site de portfólio pessoal. O projeto foi desenvolvido como parte das atividades práticas do curso **Alpha EdTech**, com o objetivo de demonstrar habilidades avançadas em desenvolvimento Front-end, Design UI/UX e manipulação do DOM.
 
-## Sobre o Projeto
+## 🚀 Sobre o Projeto
 
-O site foi construído para atuar como um hub central para meus projetos acadêmicos e pessoais. O design foi inicialmente prototipado no Figma e traduzido para código utilizando tecnologias web fundamentais, sem o uso de frameworks CSS pesados, garantindo leveza e controle total sobre a estilização.
+O site atua como um hub central para meus projetos acadêmicos e pessoais, apresentando uma **identidade visual temática "Cyberpunk/Hacker"**. O design foca na imersão do usuário através de micro-interações, animações complexas e uma estética neon, sem abrir mão da performance e acessibilidade.
 
-A interface é responsiva, adaptando-se desde dispositivos móveis até monitores de alta resolução (4K), e conta com navegação fluida entre as seções.
+A interface é totalmente responsiva, adaptando-se fluidamente desde dispositivos móveis até monitores de alta resolução (4K).
 
-## Tecnologias Utilizadas
+## 🛠 Tecnologias Utilizadas
 
-* **HTML5:** Estruturação semântica do conteúdo.
-* **CSS3:** Estilização completa, uso de Flexbox e CSS Grid para layout, variáveis CSS (:root) para consistência de tema e media queries para responsividade.
-* **JavaScript (Vanilla):** Lógica para manipulação do DOM, especificamente para o destaque dinâmico da navegação (sidebar) durante a rolagem da página (scroll spy).
-* **Font Awesome:** Biblioteca de ícones utilizada na navegação e redes sociais.
-* **Google Fonts:** Tipografia (Fonte Poppins).
+* **HTML5:** Estruturação semântica e acessível.
+* **CSS3:**
+    * Animações avançadas com `@keyframes` (Scanlines, Glitch, Fade-ins).
+    * Design System baseado em variáveis CSS (`:root`) para paleta Neon.
+    * Layout responsivo com Flexbox e Grid.
+* **JavaScript (Vanilla ES6+):**
+    * `IntersectionObserver` para animações baseadas em scroll.
+    * Lógica para efeitos de digitação (Typewriter) e decodificação de texto (Matrix Effect).
+    * Manipulação dinâmica de classes para interatividade.
+* **Font Awesome:** Ícones para navegação e redes sociais.
+* **Google Fonts:** Tipografia monoespaçada (**Fira Code**) para reforçar a estética de programação.
 
-## Estrutura de Arquivos
+## 📂 Estrutura de Arquivos
 
-A organização do projeto segue a seguinte estrutura:
+* `index.html`: Arquivo principal (Single Page Application).
+* `style.css`: Folha de estilos contendo todas as regras visuais e animações.
+* `scripts.js`: Lógica de interatividade, animações de texto e observadores de seção.
+* `/imagens`: Diretório com assets otimizados (Logo, Foto de Perfil e Capas dos Projetos).
 
-* `index.html`: Arquivo principal contendo a estrutura semântica da página única (Single Page).
-* `style.css`: Folha de estilos responsável por todo o visual, reset e layout responsivo.
-* `script.js`: Script responsável pela interatividade da barra de navegação lateral.
-* `/img`: Diretório destinado ao armazenamento de imagens (foto de perfil, logo e prints dos projetos).
-* `projeto1.html`, `projeto2.html`, etc.: Páginas individuais demonstrando projetos específicos linkados nos cards do portfólio.
+## ✨ Funcionalidades e Efeitos Visuais
 
-## Funcionalidades
+1.  **Tema Hacker/Cyberpunk:**
+    * **Matrix Decoding:** Títulos das seções se "decodificam" com caracteres aleatórios ao entrarem na tela.
+    * **Typewriter:** Efeito de digitação automática na apresentação inicial.
+    * **Continuous Glitch:** Efeitos de falha digital (glitch) nos textos e títulos para dinamismo.
+2.  **Interatividade Avançada:**
+    * **Hover Effects:** Cards com efeito de elevação, brilho neon e rotação de ícones.
+    * **Scanline Buttons:** Botões com efeito de luz varrendo a superfície ao passar o mouse.
+3.  **Scroll Spy & Reveal:**
+    * Menu lateral que detecta e ilumina a seção atual.
+    * Seções aparecem suavemente (Fade-in/Slide-up) conforme a rolagem.
+4.  **Responsividade Total:**
+    * Adaptação de layout e tipografia para Celulares, Tablets e Desktops.
+    * Suporte a interações de toque (Touch) para dispositivos móveis.
 
-1.  **Navegação Lateral Fixa:** Menu lateral que permite acesso rápido a todas as seções (Home, Sobre, Portfólio, Skills, Contato).
-2.  **Scroll Spy:** O item do menu correspondente à seção visível na tela é destacado automaticamente conforme o usuário rola a página.
-3.  **Layout Responsivo:** Ajuste automático de layout para telas de celulares, tablets, laptops e desktops ultrawide.
-4.  **Galeria de Projetos:** Cards interativos que redirecionam para demonstrações de projetos hospedados.
-
-## Como Executar
+## 📦 Como Executar
 
 Para visualizar o projeto localmente:
 
-1.  Clone este repositório em sua máquina.
-2.  Certifique-se de que as imagens estejam na pasta correta para carregamento adequado.
-3.  Abra o arquivo `index.html` em qualquer navegador web moderno (Chrome, Firefox, Edge, Safari).
+1.  Clone este repositório em sua máquina:
+    ```bash
+    git clone [https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git](https://github.com/SEU-USUARIO/SEU-REPOSITORIO.git)
+    ```
+2.  Navegue até a pasta do projeto.
+3.  Abra o arquivo `index.html` em qualquer navegador web moderno.
 
-## Autor
+## 👨‍💻 Autor
 
 **Caio José dos Santos Santana**
-Aspirante - Alpha EdTech.
+* Desenvolvedor Web & Designer UI/UX
