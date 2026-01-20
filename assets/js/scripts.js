@@ -40,10 +40,9 @@ const startContinuousGlitch = (target) => {
         // Restaura o texto original antes de glitchar de novo
         state.forEach(item => item.node.textContent = item.originalText);
 
-        // Aplica o glitch em nós aleatórios (2 letras por vez)
+        // Aplica o glitch em nós aleatórios
         for (let i = 0; i < 2; i++) {
             const randomEntry = state[Math.floor(Math.random() * state.length)];
-            // Proteção caso o nó não exista mais
             if (!randomEntry) continue;
             
             const text = randomEntry.originalText;
@@ -58,7 +57,7 @@ const startContinuousGlitch = (target) => {
             randomEntry.node.textContent = newText;
         }
 
-        // Efeito flash (Restaura rápido)
+        // Efeito flash
         setTimeout(() => {
             state.forEach(item => item.node.textContent = item.originalText);
         }, 150);
@@ -66,7 +65,7 @@ const startContinuousGlitch = (target) => {
     }, 3000);
 };
 
-/* Typewriter (Efeito de Digitação do Nome) */
+/* Typewriter */
 function initTypeWriter(element) {
     if (!element) return;
 
@@ -84,8 +83,6 @@ function initTypeWriter(element) {
 
     function type() {
         if (partIndex >= contentParts.length) {
-            // Fim da digitação.
-            // NÃO chamamos o glitch aqui para o nome ficar estático e legível.
             return;
         }
 
@@ -109,8 +106,6 @@ function initTypeWriter(element) {
             charIndex = 0;
             partIndex++;
         }
-
-        // Velocidade aleatória de digitação (Humanizada)
         setTimeout(type, Math.random() * 100 + 50);
     }
 
@@ -120,10 +115,10 @@ function initTypeWriter(element) {
 // Inicia a digitação na Home
 initTypeWriter(DOM.typingElement);
 
-/* Matrix Decode (Para os Títulos das Seções) */
+/* Matrix Decode */
 const decodeEffect = (target) => {
+    const originalText = target.dataset.value || target.textContent;
     let iterations = 0;
-    const originalText = target.dataset.value;
     
     const interval = setInterval(() => {
         const newText = originalText
@@ -138,14 +133,12 @@ const decodeEffect = (target) => {
 
         if (iterations >= originalText.length) {
             clearInterval(interval);
-            // Inicia o glitch suave nos títulos após decodificar
             startContinuousGlitch(target);
         }
         iterations += 1 / 3;
     }, 30);
 };
 
-// Observador para ativar o efeito nos títulos quando aparecem na tela
 const titleObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -157,14 +150,12 @@ const titleObserver = new IntersectionObserver((entries, observer) => {
 
 DOM.hackerTitles.forEach(title => titleObserver.observe(title));
 
-/* Reveal on Scroll (Aparição suave das seções) */
+/* Reveal on Scroll */
 const sectionRevealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('section-visible');
         } else if (entry.target.id !== 'home') {
-            // Remove a classe se sair da tela (para animar de novo se subir)
-            // Se preferir que anime só uma vez, remova este 'else if'
             entry.target.classList.remove('section-visible');
         }
     });
@@ -172,7 +163,7 @@ const sectionRevealObserver = new IntersectionObserver((entries) => {
 
 DOM.sections.forEach(section => sectionRevealObserver.observe(section));
 
-/* Sidebar Ativa (Menu Lateral Iluminado) */
+/* Sidebar Ativa */
 window.addEventListener('scroll', () => {
     let current = "";
     
@@ -183,7 +174,6 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    // Ajuste para o final da página (Contato)
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
         current = "contato";
     }
@@ -196,7 +186,7 @@ window.addEventListener('scroll', () => {
     });
 });
 
-/* --- Binary Rain Effect (Fundo Matrix) --- */
+/* Binary Rain Effect */
 const setupBinaryRain = () => {
     const rainLines = document.querySelectorAll('.hacker-line');
     const characters = "10"; // Chuva de binários
@@ -205,7 +195,6 @@ const setupBinaryRain = () => {
 
     rainLines.forEach(line => {
         let content = "";
-        // Cria uma coluna vertical de números aleatórios
         for(let i = 0; i < 25; i++) {
             content += characters.charAt(Math.floor(Math.random() * characters.length)) + "\n"; 
         }
@@ -213,5 +202,4 @@ const setupBinaryRain = () => {
     });
 };
 
-// Inicia a chuva
 setupBinaryRain();
